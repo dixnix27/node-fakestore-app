@@ -41,11 +41,11 @@ Here is a table with the `endpoint` descriptions:
 
 | Action                    | URL                    | Method | Response          |
 | :------------------------ | :--------------------- | :----- | :---------------- |
-| Add a Product             | /api/products          | POST   | the new Dog       |
-| View list of Products     | /api/products          | GET    | array of Dogs     |
-| View Product details      | /api/products/{id}     | GET    | a Dog             |
-| Update Product            | /api/products/{id}     | PUT    | updated Dog       |
-| Remove a Product          | /api/products/{id}     | DELETE | deleted Dog       |
+| Add a Product             | /api/products          | POST   | the new Product   |
+| View list of Products     | /api/products          | GET    | array of Products |
+| View Product details      | /api/products/{id}     | GET    | a Product         |
+| Update Product            | /api/products/{id}     | PUT    | updated Product   |
+| Remove a Product          | /api/products/{id}     | DELETE | deleted Product   |
 
 #### 1 [GET] /api/products 
 
