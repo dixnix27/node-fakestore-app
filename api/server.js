@@ -6,7 +6,13 @@ const userRouter = require("./user/router");
 const productRouter = require("./product/router");
 const cartRouter = require("./cart/router")
 const server = express();
-server.use(cors());
+const corsOptions = {
+  origin: "*",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+  };
+server.use(cors(corsOptions));
 server.use(express.json()); ///body parser
 server.use("/api/users", userRouter);
 server.use("/api/products", productRouter);
