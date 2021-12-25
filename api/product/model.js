@@ -15,8 +15,11 @@ const ProductSchema = new mongoose.Schema({
   category: {
     type: String,
   },
+  image:{
+    type:String
+  },
   rating: {
-    type: String,
+    type: Number,
   },
 });
 

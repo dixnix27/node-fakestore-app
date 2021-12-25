@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 
 const CartSchema = new mongoose.Schema({
+  //RELATIONSHIP WITH ANOOTHER COLLECTION(TABLE) 
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: "Users",
   },
-
-  product: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Product",
+  products: {
+    type: [mongoose.Schema.Types.ObjectId],
+    ref: "Products",
   },
 });
 

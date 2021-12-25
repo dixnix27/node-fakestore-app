@@ -1,6 +1,6 @@
 const express = require("express");
 const Product = require("./model");
-
+const {validateProduct,validateProductId} = require("./middleware")
 const router = express.Router();
 
 router.get("/", (req, res) => {
@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id",validateProductId, (req, res) => {
   const { id } = req.params;
 
   Product.findById(id)
@@ -31,7 +31,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/",validateProduct, (req, res) => {
   const { title, description, price, category, image, rating } = req.body;
 
   new Product({ title, description, price, category, image, rating })
@@ -46,7 +46,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id", validateProductId,validateProduct,(req, res) => {
   const { id } = req.params;
   const changes = req.body;
 
@@ -62,7 +62,7 @@ router.put("/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id",validateProductId, (req, res) => {
   const { id } = req.params;
 
   Product.findByIdAndDelete(id)

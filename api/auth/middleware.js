@@ -22,10 +22,10 @@ const restrictAccess = (req, res, next) => {
 const validatePassword = (req, res, next) => {
   const { password } = req.body;
 
-  if (!password || password.length <= 6) {
+  if (!password || password.length < 6) {
     return res
       .status(422)
-      .json({ message: "Password must have at least 3 characters." });
+      .json({ message: "Password must have at least 6 characters." });
   }
   next();
 };
