@@ -15,7 +15,7 @@ server.use("/api/carts", cartRouter);
 const connectDB = async () => {
   try {
     await mongoose.connect(
-      `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@stepit.0pkcf.mongodb.net/Store?retryWrites=true&w=majority`
+      `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@stepit.0pkcf.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
     );
     console.log("MongoDB connected!");
   } catch (err) {
